@@ -3,7 +3,7 @@
 ## Requisitos y entrega
 
 
-1. Clona el repositorio `github.com/bcncodes-training/intro-node.git`
+1. Clona el repositorio `github.com/full-stack-neolabs/intro-node.git`
 2. Haz un checkout de la rama que se te ha asignado, cuyo nombre comienza por `pair[num de pareja]`
 
 ```
