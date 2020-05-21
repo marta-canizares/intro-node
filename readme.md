@@ -62,9 +62,9 @@ $ mocha --version
 
 
 ```
-starter-code/
+
 ├── test
-│   └── test.js
+│   └── test.spec.js
 └─ package.json
 └─ index.js
 ```
@@ -82,73 +82,98 @@ $ npm test
 > introduccion-node@1.0.0 test C:\Users\rglep\Documents\Curso CIFO-La Violeta\Mean Stack 2019\MS-3\Ejercicios\1.introduccion-node\starter-code
 > mocha
 
-
-
-  SortedList
+SortedList
     Constructor
-      1) should create an empty SortedList
+      1) should have items and length properties
     #add(x)
       2) should add a single value to SortedList
-      3) should add a second value to SortedList, sorted
-      4) should add a third value to SortedList, sorted
+      3) should add a third value to SortedList
+      4) should add a value while keeping the list sorted
     #get(i)
-      √ should return an OutOfBounds exception if there is no element in that position
-      5) should return the element in that position
+      5) should return an OutOfBounds exception if there is no element in that position
+      6) should return the element in that position
     #max()
-      √ should return an EmptyList exception if there is no element in the list
-      6) should return the max element in the list
+      7) should return an EmptySortedList exception if there is no elements in the list
+      8) should return the max (highest) value in the list
     #min()
-      √ should return an EmptyList exception if there is no element in the list
-      7) should return the min element in the list
-    #average()
-      √ should return an EmptySortedList exception if there are no elements
-      8) should return the average of elements in the array
-    sum()
-      √ should return a EmptySortedList exception if there are no elements in the list
-      9) should add(sum) all elements of the array if there are elements in the list
+      9) should return an EmptySortedList exception if there are no elements in the list
+      10) should return the min (lowest) value in the list
+    #sum()
+      11) should return the sum of all elements in the list
+      12) should return 0 for an empty sorted list
+    #avg()
+      13) should return an EmptySortedList exception if there are no elements
+      14) should return the average of elements in the list
 
-
-  5 passing (9ms)
-  9 failing
-
+  0 passing (13ms)
+  14 failing
 ```
-De momento sólo hay 5 tests pasados, pero el objetivo es pasarlos TODOS!!!
 
-## SortedList Class
+No te preocupes si todavía no pasas los test, eso llegará!!!
 
-Hay que crear una clase que mantenga una lista ordenada de números, en orden ascendente.
+## Instrucciones
 
-La clase tendrá los siguientes métodos:
+La tarea aquí es crear una clase que mantenga una **lista ordenada de números en orden ascendente**
+Trabaja en el archivo `index.js` que contiene un esqueleto de la clase `SortedList`.
 
-### Constructor
+Los métodos que tiene que tener la clase `SortedList` son los siguientes:
 
-`new SortedList` debería crear un nuevo objeto de la clase `SortedList`. 
+### Iteración 1: constructor()
 
-El objeto tendría las propiedades `items` y `length`. 
+`new SortedList` debe crear un nuevo objeto de la clase `SortedList`.
 
-- `items` debe ser un array.
-- `length` debe contener el número de elementos de ese array.
+El objeto debe tener dos propiedades: `items` y `length`.
 
-### Add
+- `items` debe ser un Array,
+- `length` debe ser el número de elementos del array.
 
-El método `add(x)` añade `x` al array `items` y lo ordena.
+### Iteración 2: add(item)
 
-### Get
+El método `add(item)` añade `item` al array `items` y lo ordena en orden ascendente.
 
-Este método obtiene el `n-esimo` valor de la lista.
+Esto significa que si el array tiene los elementos: `[2, 5, 7]`, y se añade un `6` el array quedaría: `[2, 5, 6, 7]`.
+
+Aquí debes asegurarte que la propiedad `length` se actualiza cuando se añade un nuevo elemento a la lista.
+
+### Iteración 3: get(pos)
+
+Este método obtiene el valor de la lista en la posición `pos`.
+
 En este caso necesitarás también la propiedad `length` que te proporciona el tamaño de la lista.
+_Ejemplo_: Si una instancia de SortedList tiene elementos: [2, 5, 7], cuando se invoca `get(2)` devolverá `7` que es el elemento en esa posición del array. Puedes mirar el test para ver más ejemplos
+Además debes asegurarte de lanzar un error con el mensaje _OutOfBounds_ si un usuario intenta obtener un elemento de una posición que no existe (por ejemplo: _si el array tiene 5 elementos y queremos obtener el elemento de la posición 7_).
 
-### Max
+Para lanzar error puedes seguir la siguiente instrucción:
+
+```js
+throw new Error('OutOfBounds');
+```
+
+### Iteración 4: max()
 
 El método `max()` devuelve el valor más alto del array.
 
-### Min
+En el caso de que `SortedList` esté vacío debes lanzar un error con el mensaje "EmptySortedList". Utiliza la siguiente expresión:
+
+```js
+throw new Error('EmptySortedList');
+```
+
+### Iteración 5: min()
+
 El método `min()` devuelve el menor valor de la lista.
 
-### Average
+Si la lista está vacía, debes lanzar el error "EmptySortedList", de la misma forma que en el paso anterior.
 
-El método `average()` devuelve el valor medio del array.
+## Bonus track
 
-### Sum
+### Iteración 6: sum()
 
 El método `sum()` devuelve la suma de todos los valores.
+Este caso lo debes resolver sin ayuda, simplemente comprobando los tests.
+
+### Iteration 7: avg()
+
+El método `avg()` devuelve el valor medio del array.
+
+Igual que antes comprueba el test para saber que es lo que tienes que codificar.

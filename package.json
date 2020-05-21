@@ -1,0 +1,27 @@
+{
+  "name": "node-intro",
+  "version": "1.0.0",
+  "description": "## Ejercicio de Introducción a Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r esm",
+    "start": "node -r esm index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/full-stack-neolabs/intro-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/full-stack-neolabs/intro-node/issues"
+  },
+  "homepage": "https://github.com/full-stack-neolabs/intro-node#readme",
+  "devDependencies": {
+    "mocha": "^7.1.2"
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
