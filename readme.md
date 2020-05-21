@@ -25,7 +25,7 @@ git push
 
 ## Testing
 
-Este ejercicio se ha de completar mediante tests. Durante todo el itinerario de Mean-stack hemos ido utilizado el _testing_ para realizar algunos ejercicios. Para los que no hayan tenido oportunidad de practicar con ellos, se acompaña una breve introducción al testing.
+Este ejercicio se ha de completar mediante tests. 
 
 ### Qué es el testing
 
@@ -33,7 +33,7 @@ El testing es un proceso por el cual se ejecuta una aplicación para validar y v
 
 El testing es un proceso, no una única actividad. Por tanto, el diseño de tests durante las fases iniciales del desarrollo de un producto puede ayudar a prevenir deficiencias en el código o en el propio diseño del producto.
 
-En este ejercicio, se han creaado todos los test necesarios para obtener la solución, y se han de ejecutar todos ellos para construir el código que cumpla con los requisitos.
+En este ejercicio, se han creado todos los test necesarios para obtener la solución, y se han de ejecutar todos ellos para construir el código que cumpla con los requisitos.
 
 Los tests probarán que el código funciona en cualquier situación en las que se prevé que lo haga. También nos servirá para el diseño o la implementación de nuevas funcionalidades, de manera que los cambios que se hagan al código no rompan lo que ya está funcionando.
 
@@ -45,18 +45,12 @@ Los tests probarán que el código funciona en cualquier situación en las que s
 
 ### Utilización
 
-Para comenzar a utilizar mocha, se ha de instalar el package como **global package** en el sistema.
+Comienza generando las dependencias del proyecto mediante
 
+```bash
+$ npm install
 ```
-$ npm install -g mocha
-```
-
-Probamos que se ha instalado correctamente:
-
-```
-$ mocha --version
-6.2.0
-```
+Esto instalará mocha como dependencia de desarrollo
 
 ## Estructura del proyecto:
 
@@ -68,6 +62,7 @@ $ mocha --version
 └─ package.json
 └─ index.js
 ```
+
 Trabajaremos con el fichero `index.js`. Escribiremos la implementación de nuestra clase `SortedList`.
 
 La carpeta `test` contiene todos los tests que se ejecutarán con Mocha.
