@@ -1,16 +1,19 @@
 export default class SortedList {
- 
-        constructor() {}
-      
-        add(item) {}
-      
-        get(pos) {}
-      
-        max() {}
-      
-        min() {}
-      
-        sum() {}
-      
-        avg() {}
+
+    constructor() {
+        this.items = [];
+        this.length = 0;
     }
+
+    add(item) { }
+
+    get(pos) { }
+
+    max() { }
+
+    min() { }
+
+    sum() { }
+
+    avg() { }
+}
